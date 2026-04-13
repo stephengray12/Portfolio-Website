@@ -6,80 +6,63 @@ import Link from "next/link";
 export default function Taskbar() {
   const [open, setOpen] = useState(false);
 
-  // Keep these in sync with section IDs in page.js and the resume filename in /public
   const items = [
     { name: "Home", href: "/" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-    { name: "Resume", href: "/Stephen_Gray_Resume.pdf", isFile: true },
   ];
 
   return (
-    <header className="bg-black text-white p-4 fixed top-0 left-0 w-full z-50 shadow-md">
-      <div className="flex justify-between items-center max-w-5xl mx-auto">
-        {/* Mobile menu toggle */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden"
-          aria-label="Toggle navigation"
-          aria-expanded={open}
-        >
+    <header className="bg-black/80 backdrop-blur-md border-b border-white/10 text-white fixed top-0 left-0 w-full z-50">
+      <div className="flex justify-between items-center max-w-6xl mx-auto px-4 py-4">
+        {/* Logo */}
+        <Link href="/" className="text-lg font-semibold tracking-wide">
+          Stephen Gray
+        </Link>
+
+        {/* Mobile toggle */}
+        <button onClick={() => setOpen((v) => !v)} className="md:hidden">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-6">
-          {items.map((item) =>
-            item.isFile ? (
-              <a
-                key={item.name}
-                href={item.href}
-                className="hover:text-blue-400 transition-colors duration-500"
-                // remove download if you want it to open in the browser instead of downloading
-                // download
-              >
-                {item.name}
-              </a>
-            ) : (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="hover:text-blue-400 transition-colors duration-500"
-              >
-                {item.name}
-              </Link>
-            )
-          )}
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {items.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm text-gray-300 hover:text-white transition"
+            >
+              {item.name}
+            </Link>
+          ))}
+
+          {/* Resume button */}
+          <a
+            href="/Stephen_Gray_Resume.pdf"
+            className="px-4 py-1 bg-blue-600 rounded hover:bg-blue-700 text-sm"
+          >
+            Resume
+          </a>
         </nav>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden mt-4 px-4">
-          <nav className="flex flex-col gap-4 bg-black p-4 rounded-lg">
-            {items.map((item) =>
-              item.isFile ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="hover:text-blue-400 transition-colors duration-300"
-                  onClick={() => setOpen(false)}
-                  // download
-                >
-                  {item.name}
-                </a>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="hover:text-blue-400 transition-colors duration-300"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              )
-            )}
+        <div className="md:hidden px-4 pb-4">
+          <nav className="flex flex-col gap-4 bg-black/90 p-4 rounded-lg">
+            {items.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            <a href="/Stephen_Gray_Resume.pdf">Resume</a>
           </nav>
         </div>
       )}
