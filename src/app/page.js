@@ -29,16 +29,13 @@ import {
 const skills = [
   { name: "React", icon: <FaReact /> },
   { name: "TypeScript", icon: <SiTypescript /> },
-  { name: "Next.js", icon: <SiNextdotjs /> },
   { name: "TailwindCSS", icon: <SiTailwindcss /> },
-  { name: "C++", icon: <SiCplusplus /> },
   { name: "Git", icon: <FaGitAlt /> },
   { name: "Python", icon: <FaPython /> },
   { name: "C#", icon: <span className="font-bold text-purple-500">C#</span> },
   { name: "Linux", icon: <SiLinux /> },
   { name: "MySQL", icon: <SiMysql /> },
   { name: "Vue.js", icon: <SiVuedotjs /> },
-  { name: "Vuetify", icon: <SiVuetify /> },
   { name: ".NET", icon: <SiDotnet /> },
 ];
 
@@ -225,7 +222,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-4 text-lg text-gray-300 max-w-xl">
-                I'm a Computer Science student and automation engineer with a
+                I'm a Computer Science student and automation engineer at Molex with a
                 passion for software development, Linux, and open-source
                 technology. I enjoy building applications, automating systems,
                 and figuring out how things work. When I'm not coding, I enjoy
