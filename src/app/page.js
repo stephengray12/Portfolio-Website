@@ -94,7 +94,7 @@ const projects = [
     title: "UniFi Switch Automation",
     desc: "Python application for monitoring and controlling UniFi switch PoE ports through the UniFi API.",
     link: "https://github.com/stephengray12/unifi-switch-management",
-    image: "/raspberrypi.png",
+    image: "/unifi_image.png",
     tech: ["Python", "Linux"],
   },
 ];
