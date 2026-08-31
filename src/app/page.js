@@ -8,8 +8,6 @@ import { motion, useInView } from "framer-motion";
 import {
   FaJs,
   FaReact,
-  FaHtml5,
-  FaCss3Alt,
   FaGitAlt,
   FaPython,
   FaLinkedin,
@@ -24,49 +22,53 @@ import {
   SiMysql,
   SiVuedotjs,
   SiVuetify,
+  SiTypescript,
+  SiDotnet,
 } from "react-icons/si";
 
 const skills = [
-  { name: "JavaScript", icon: <FaJs /> },
   { name: "React", icon: <FaReact /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
   { name: "Next.js", icon: <SiNextdotjs /> },
   { name: "TailwindCSS", icon: <SiTailwindcss /> },
   { name: "C++", icon: <SiCplusplus /> },
   { name: "Git", icon: <FaGitAlt /> },
-  { name: "HTML", icon: <FaHtml5 /> },
   { name: "Python", icon: <FaPython /> },
   { name: "C#", icon: <span className="font-bold text-purple-500">C#</span> },
   { name: "Linux", icon: <SiLinux /> },
   { name: "MySQL", icon: <SiMysql /> },
   { name: "Vue.js", icon: <SiVuedotjs /> },
   { name: "Vuetify", icon: <SiVuetify /> },
+  { name: ".NET", icon: <SiDotnet /> },
 ];
 
 const techIcon = {
   "Next.js": <SiNextdotjs />,
+  TypeScript: <SiTypescript />,
   React: <FaReact />,
   Tailwind: <SiTailwindcss />,
-  HTML: <FaHtml5 />,
-  JavaScript: <FaJs />,
   "C++": <SiCplusplus />,
   Python: <FaPython />,
   Linux: <SiLinux />,
   MySQL: <SiMysql />,
+  "Vue.js": <SiVuedotjs />,
+  Vuetify: <SiVuetify />,
+  "C#": <span className="font-bold text-purple-500">C#</span>,
+  ".NET": <SiDotnet />,
 };
 
 const brandColors = {
-  JavaScript: "#F7DF1E",
+  TypeScript: "#3178C6",
   React: "#61DAFB",
   "Next.js": "#FFFFFF",
   Tailwind: "#06B6D4",
-  HTML: "#E34F26",
-  CSS: "#1572B6",
   Git: "#F05032",
   Python: "#3776AB",
   "C++": "#00599C",
-  MySQL: "#4479A1",
-  "Vue.js": "#4FC08D",
-  Vuetify: "#1867C0",
+  MySQL: "#0e61a1",
+  "Vue.js": "#11c511",
+  Vuetify: "#49ff01",
+  ".NET": "#775dd4",
 };
 
 const projects = [
@@ -82,19 +84,19 @@ const projects = [
     desc: "Modernized an existing site with HTTPS, improved SEO, and responsive design.",
     link: "https://github.com/stephengray12/Trigon-Engineering",
     image: "/trigonengineering.png",
-    tech: ["HTML", "JavaScript", "React", "Tailwind"],
+    tech: ["React", "Tailwind"],
   },
   {
-    title: "Connect Four",
-    desc: "A terminal based Connect four game I built in my programming II class.",
-    link: "https://github.com/stephengray12/cpsc2376-Gray/tree/main/projects/project04",
-    image: "/connectfour.png",
-    tech: ["C++"],
+    title: "RouteOps",
+    desc: "Full-stack logistics platform built with Vue.js, .NET, and MySQL to explore route operations, supply chain management, and tools for small businesses. *Project is in progress as I have free time to work on it while going through school.*",
+    link: "https://github.com/stephengray12/RouteOps",
+    image: "/raspberrypi.png",
+    tech: ["Vue.js", ".NET", "MySQL"],
   },
   {
-    title: "Building Automation Projects",
-    desc: "Planned project to build advanced BACnet networking tools and custom dashboards for building automation engineers.",
-    link: "https://github.com/stephengray12/Raspberry_Pi_Projects",
+    title: "UniFi Switch Automation",
+    desc: "Python application for monitoring and controlling UniFi switch PoE ports through the UniFi API.",
+    link: "https://github.com/stephengray12/unifi-switch-management",
     image: "/raspberrypi.png",
     tech: ["Python", "Linux"],
   },
@@ -219,13 +221,16 @@ export default function Home() {
 
             <div className="text-center sm:text-left">
               <h1 className="text-4xl sm:text-6xl font-bold text-white">
-                Hi, I&apos;m Stephen Gray
+                Hi, I&apos;m Stephen Gray!
               </h1>
 
               <p className="mt-4 text-lg text-gray-300 max-w-xl">
-                I’m a Computer Science student and building automation engineer
-                focused on software development, distributed systems, and
-                real-world problem solving.
+                I'm a Computer Science student and automation engineer with a
+                passion for software development, Linux, and open-source
+                technology. I enjoy building applications, automating systems,
+                and figuring out how things work. When I'm not coding, I enjoy
+                experimenting with computers and electronics and learning new
+                technologies.
               </p>
 
               <SocialLinks />
@@ -243,34 +248,28 @@ export default function Home() {
         </section>
 
         <section id="about" className="scroll-mt-24 mb-20">
-          <SectionTitle>About</SectionTitle>
+          <SectionTitle>About Me</SectionTitle>
 
           <div className="max-w-3xl text-white space-y-4 leading-relaxed">
             <p>
-              I started out in the electrical trade and spent about seven years
-              working as a licensed electrician before moving into building
-              automation. Over time I worked my way into engineering roles,
-              where I now program and integrate systems for large facilities.
+              My career started in the construction and electrical trades before
+              I transitioned into building automation, where I was introduced to
+              programming, networking, and integrating real-world systems.
             </p>
-
+            
             <p>
-              Getting into automation is what pushed me toward software. I liked
-              the problem-solving side of it and wanted to go deeper, so I went
-              back to school for Computer Science. Since then, I’ve been focused
-              on building real applications and improving my skills in
-              full-stack development.
+              Today, I work at Molex in an engineering environment where I
+              develop automation tools with Python and work with Linux,
+              networking, and data center technologies. I use tools like GitLab
+              and PyCharm as part of my daily development workflow.
             </p>
-
             <p>
-              What I enjoy most is working on systems that connect the real
-              world with software—things involving networking, automation, and
-              distributed systems.
+              I'm currently pursuing a Computer Science degree at UA Little Rock
+              and hold certifications in Python and .NET. I'm also expanding
+              into full-stack development using TypeScript, .NET, and MySQL,
+              with a strong interest in Linux and open-source technologies.
             </p>
-
-            <p className="text-neutral-300">
-              Right now I’m looking for a software engineering role or
-              internship where I can keep learning and contribute.
-            </p>
+            
           </div>
         </section>
 
